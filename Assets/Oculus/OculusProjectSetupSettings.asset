@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: OculusProjectSetupSettings
   m_EditorClassIdentifier: 
   boolProperties:
-    keys: []
-    values: 
+    keys:
+    - OVRProjectSetup.OVRProjectSetup.OVRConfigurationTask.52a8c9d8e26fa135632224a3bf5db520.Ignored.Android
+    - OVRProjectSetup.OVRProjectSetup.OVRConfigurationTask.6e607fba88a13d9001e7fb09ad1ead20.Ignored.Android
+    values: 0101
   intProperties:
     keys: []
     values: 
