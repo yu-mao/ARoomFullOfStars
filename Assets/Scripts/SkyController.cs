@@ -9,6 +9,7 @@ public class SkyController : MonoBehaviour
     [SerializeField] private GameObject _pointerVisual;
     [SerializeField] private float _skyPlacementElevation = 0.01f;
     [SerializeField] private AudioController _audio;
+    [SerializeField] private DeerController _deer;
 
     private bool _isInitialized = false;
     private int _wallLayerMask;
@@ -26,6 +27,8 @@ public class SkyController : MonoBehaviour
         if (!_isInitialized) return;
 
         DetectSkySpawning();
+
+        // SeekTheAnimal();
     }
 
     private void DetectSkySpawning()
@@ -56,5 +59,10 @@ public class SkyController : MonoBehaviour
         // // TODO: play SFX of sky spawning 
         // _audio.sfxChannel.clip = _audio.skySpawnSFX;
         // _audio.sfxChannel.Play();
+    }
+
+    private void SeekTheAnimal()
+    {
+        _deer.BeenFound();
     }
 }

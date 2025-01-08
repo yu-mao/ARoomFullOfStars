@@ -7,6 +7,12 @@ public class DeerController : MonoBehaviour
 
     private Vector3 _direction;
     private float _timer = 0f;
+    private bool _beenFound = false;
+
+    public void BeenFound()
+    {
+        _beenFound = true;
+    }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,6 +23,8 @@ public class DeerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_beenFound) return;
+        
         transform.position += _direction * (_speed * Time.deltaTime);
         
         _timer += Time.deltaTime;
