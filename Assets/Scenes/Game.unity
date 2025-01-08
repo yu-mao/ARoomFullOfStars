@@ -1094,10 +1094,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15ffa61dc9d734572b83e2ebc4a39e96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skyPrefab: {fileID: 1881545542928436181, guid: 5e34123fba7844f15b1aaa8e6afa25ba, type: 3}
+  _skyPrefab: {fileID: 4516016404754719446, guid: bd4c01dff28094ad8a932a9efd5863d1, type: 3}
   _pointerVisual: {fileID: 6395338543242428137, guid: 692b8bfd32da14234b987b59e4084373, type: 3}
   _skyPlacementElevation: 0.01
   _audio: {fileID: 1485472730}
+  _deer: {fileID: 117266718}
 --- !u!1 &54329995
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,6 +1723,17 @@ Transform:
   - {fileID: 1768647762}
   m_Father: {fileID: 245154372}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &117266718 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3342127738967363948, guid: d8b100b30dc3e9340addad9ac2bb7e21, type: 3}
+  m_PrefabInstance: {fileID: 1570379987}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 924560f3c88534ba5ba73d52f0a5d624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &118014261
 GameObject:
   m_ObjectHideFlags: 0
@@ -19114,6 +19126,10 @@ PrefabInstance:
     - target: {fileID: 6244460442829132516, guid: d8b100b30dc3e9340addad9ac2bb7e21, type: 3}
       propertyPath: m_Name
       value: Deer_001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244460442829132516, guid: d8b100b30dc3e9340addad9ac2bb7e21, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7968407583351251102, guid: d8b100b30dc3e9340addad9ac2bb7e21, type: 3}
       propertyPath: m_LocalPosition.x
