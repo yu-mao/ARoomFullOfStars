@@ -24,7 +24,12 @@ public class SkyController : MonoBehaviour
     private void Update()
     {
         if (!_isInitialized) return;
-        
+
+        DetectSkySpawning();
+    }
+
+    private void DetectSkySpawning()
+    {
         Vector3 rayOrigin = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
         Vector3 rayDirection = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch) * Vector3.forward;
         Ray ray = new Ray(rayOrigin, rayDirection);
@@ -35,17 +40,21 @@ public class SkyController : MonoBehaviour
 
             if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
             {
-                Quaternion rotation = Quaternion.LookRotation(-hit.normal);
-                Vector3 placementPosition = hit.point + hit.normal * _skyPlacementElevation;
-                
-                var skyPatch = Instantiate(_skyPrefab, placementPosition, rotation);
-                _skyPatches.Add(skyPatch);
-                
-                // // TODO: play SFX of sky spawning 
-                // _audio.sfxChannel.clip = _audio.skySpawnSFX;
-                // _audio.sfxChannel.Play();
+                SpawnSkyPatch(hit);
             }
         }
     }
-    
+
+    private void SpawnSkyPatch(RaycastHit hit)
+    {
+        Quaternion rotation = Quaternion.LookRotation(-hit.normal);
+        Vector3 placementPosition = hit.point + hit.normal * _skyPlacementElevation;
+                
+        var skyPatch = Instantiate(_skyPrefab, placementPosition, rotation);
+        _skyPatches.Add(skyPatch);
+                
+        // // TODO: play SFX of sky spawning 
+        // _audio.sfxChannel.clip = _audio.skySpawnSFX;
+        // _audio.sfxChannel.Play();
+    }
 }
