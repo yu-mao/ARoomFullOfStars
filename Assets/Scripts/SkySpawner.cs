@@ -1,22 +1,26 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SkySpawner : MonoBehaviour
 {
+    public List<GameObject> skyPatches = new List<GameObject>();
+    
     [SerializeField] private GameObject skyPrefab;
     [SerializeField] private GameObject pointerVisual;
     [SerializeField] private float skyPlacementElevation = 0.01f;
+    [SerializeField] private AudioController audioController;
     
     private bool isInitialized = false;
     private int wallLayerMask;
-    private AudioSource audioSource;
+    // private AudioSource audioSource;
 
     public void Initialize()
     {
         isInitialized = true;
         wallLayerMask = LayerMask.GetMask("Wall");
         pointerVisual = Instantiate(pointerVisual);
-        audioSource = GetComponent<AudioSource>();
+        // audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -36,8 +40,9 @@ public class SkySpawner : MonoBehaviour
                 Quaternion rotation = Quaternion.LookRotation(-hit.normal);
                 Vector3 placementPosition = hit.point + hit.normal * skyPlacementElevation;
                 
-                Instantiate(skyPrefab, placementPosition, rotation);
-                audioSource.Play();
+                var skyPatch = Instantiate(skyPrefab, placementPosition, rotation);
+                skyPatches.Add(skyPatch);
+                // audioSource.Play();
             }
         }
     }
