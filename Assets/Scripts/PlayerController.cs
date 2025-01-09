@@ -1,12 +1,13 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private DeerController _deer;
     [SerializeField] private SkyController _sky;
     [SerializeField] private GameObject _skyPatchPrefab;
-    [SerializeField] private LineRenderer _lineRenderer;
     [SerializeField] private LayerMask _deerLayerMask;
 
     private float _sphereCastRadius;
@@ -36,8 +37,14 @@ public class PlayerController : MonoBehaviour
             if (hitInfo.collider.gameObject.TryGetComponent(out DeerController deer))
             {
                 deer.BeenFound();
+                StartCoroutine(PlayerWin());
             }
-           
         }
+    }
+
+    private IEnumerator PlayerWin()
+    {
+        yield return new WaitForSeconds(1f);
+        yield return SceneManager.LoadSceneAsync("Win");
     }
 }

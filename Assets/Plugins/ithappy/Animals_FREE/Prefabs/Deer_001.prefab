@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 924560f3c88534ba5ba73d52f0a5d624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 3
-  _directionChangeTimeInterval: 1
+  _speed: 1
+  _directionChangeTimeInterval: 3
   _animator: {fileID: 1610006619857765424}
 --- !u!136 &4841969691557010674
 CapsuleCollider:
