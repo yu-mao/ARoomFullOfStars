@@ -14,9 +14,9 @@ public class DeerController : MonoBehaviour
 
     public void BeenFound()
     {
+        _audioSource.Play();
         _beenFound = true;
         _animator.SetBool("found", true);
-        _audioSource.Play();
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created

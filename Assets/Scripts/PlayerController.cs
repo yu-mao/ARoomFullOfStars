@@ -12,11 +12,14 @@ public class PlayerController : MonoBehaviour
     private float _sphereCastRadius;
     private DeerController _deer;
     private Vector3 _playerPosWhenDiscoveredDeer;
+    private AudioSource _audioSource;
 
     private void Start()
     {
         var skyPatch = _skyPatchPrefab.transform.Find("SkyPatch");
         _sphereCastRadius = skyPatch.GetComponent<CapsuleCollider>().radius;
+        _audioSource = GetComponent<AudioSource>();
+        _audioSource.Play();
     }
 
     private void Update()
@@ -47,13 +50,9 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator PlayerWin()
     {
-        // yield return _deer.transform
-        //     .DOShakePosition(0.3f, 0.1f, 15).SetEase(Ease.InOutQuad).WaitForCompletion();
-        // yield return new WaitForSeconds(2f);
-
         yield return _deer.transform.DOLookAt(_playerPosWhenDiscoveredDeer, 1f)
             .SetEase(Ease.InOutQuad).WaitForCompletion();
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         
         yield return SceneManager.LoadSceneAsync("Win");
     }
