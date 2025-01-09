@@ -22,6 +22,9 @@ public class SkyPatchController : MonoBehaviour
         yield return transform.DOShakePosition(0.3f, 0.1f, 15).WaitForCompletion();
         
         yield return new WaitForSeconds(lifeTime);
+
+        yield return transform.DOScale(0f, 1f).SetEase(Ease.InOutQuad).WaitForCompletion();
+        
         Destroy(gameObject);
     }
 }

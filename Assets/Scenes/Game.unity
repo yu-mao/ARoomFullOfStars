@@ -1723,17 +1723,6 @@ Transform:
   - {fileID: 1768647762}
   m_Father: {fileID: 245154372}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &117266718 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3342127738967363948, guid: d8b100b30dc3e9340addad9ac2bb7e21, type: 3}
-  m_PrefabInstance: {fileID: 1570379987}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 924560f3c88534ba5ba73d52f0a5d624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &118014261
 GameObject:
   m_ObjectHideFlags: 0
@@ -19123,6 +19112,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3342127738967363948, guid: d8b100b30dc3e9340addad9ac2bb7e21, type: 3}
+      propertyPath: _speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342127738967363948, guid: d8b100b30dc3e9340addad9ac2bb7e21, type: 3}
+      propertyPath: _directionChangeTimeInterval
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6244460442829132516, guid: d8b100b30dc3e9340addad9ac2bb7e21, type: 3}
       propertyPath: m_Name
       value: Deer_001
@@ -21028,7 +21025,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a701e0e2f33473f8165a49cb239f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deer: {fileID: 117266718}
   _sky: {fileID: 54062384}
   _skyPatchPrefab: {fileID: 4516016404754719446, guid: bd4c01dff28094ad8a932a9efd5863d1, type: 3}
   _deerLayerMask:
