@@ -10,16 +10,19 @@ public class DeerController : MonoBehaviour
     private Vector3 _direction;
     private float _timer = 0f;
     private bool _beenFound = false;
+    private AudioSource _audioSource;
 
     public void BeenFound()
     {
         _beenFound = true;
         _animator.SetBool("found", true);
+        _audioSource.Play();
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
         SetARandomDirection();
     }
 

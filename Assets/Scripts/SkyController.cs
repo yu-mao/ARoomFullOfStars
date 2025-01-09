@@ -10,16 +10,21 @@ public class SkyController : MonoBehaviour
     [SerializeField] private GameObject _skyPrefab;
     [SerializeField] private GameObject _pointerVisual;
     [SerializeField] private float _skyPlacementElevation = 0.01f;
-    [SerializeField] private AudioController _audio;
 
     private bool _isInitialized = false;
     private int _wallLayerMask;
+    private AudioSource _audioSource;
 
     public void Initialize()
     {
         _isInitialized = true;
         _wallLayerMask = LayerMask.GetMask("Wall");
         _pointerVisual = Instantiate(_pointerVisual);
+    }
+
+    private void Start()
+    {
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -54,8 +59,7 @@ public class SkyController : MonoBehaviour
         var skyPatch = Instantiate(_skyPrefab, placementPosition, rotation);
         skyPatches.Add(skyPatch);
                 
-        // // TODO: play SFX of sky spawning 
-        // _audio.sfxChannel.clip = _audio.skySpawnSFX;
-        // _audio.sfxChannel.Play();
+        // TODO: play SFX of sky spawning 
+        _audioSource.Play();
     }
 }
