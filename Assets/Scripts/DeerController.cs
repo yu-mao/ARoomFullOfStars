@@ -4,6 +4,7 @@ public class DeerController : MonoBehaviour
 {
     [SerializeField] private float _speed = 5f;
     [SerializeField] private float _directionChangeTimeInterval = 2f;
+    [SerializeField] private Animator _animator;
 
     private Vector3 _direction;
     private float _timer = 0f;
@@ -12,6 +13,7 @@ public class DeerController : MonoBehaviour
     public void BeenFound()
     {
         _beenFound = true;
+        _animator.SetBool("found", true);
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created

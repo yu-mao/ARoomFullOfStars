@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1614091846642107977}
   - component: {fileID: 5719768776990376717}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sky Patch Outer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,8 +58,8 @@ GameObject:
   - component: {fileID: 8195244636356989413}
   - component: {fileID: 3473936910663435572}
   - component: {fileID: 5186735968669268225}
-  m_Layer: 0
-  m_Name: Sky Patch
+  m_Layer: 7
+  m_Name: SkyPatch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
